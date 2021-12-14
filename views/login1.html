@@ -254,6 +254,21 @@
                 return false;
             }
         }
+        var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+   dd = '0' + dd;
+}
+
+if (mm < 10) {
+   mm = '0' + mm;
+} 
+    
+today = yyyy + '-' + mm + '-' + dd;
+document.getElementById("datefield").setAttribute("max", today);
     </script>
 </head>
 
@@ -310,7 +325,7 @@
     </select>
         </div>
         <label for="departure date">DEPARTURE DATE</label>
-        <input type="date" id="today" name="selecteddate" min="2021-11-20" max="2022-11-22" required>
+        <input type="date" id="datefield"  min="2021-11-20" max="2022-11-22" required>
         <input type="submit" class="searchflights" value="Submit">
         <button type="button" value="Submit" class="searchflights" onclick="toggleTable();">SEARCH FLIGHTS</button>
     </form>

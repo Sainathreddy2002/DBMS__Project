@@ -2,7 +2,7 @@ Database Management Systems(CS308) PROJECT
 
 Project Name:-Online Airways Reservation System 
 
-Name of the Airways:-Connecting Airways
+Name of the Airways:-Connecting Airways(Connects People)
 
 Idea:-To Design an Online Airways Reservation System which is funtional to the passengers.
 

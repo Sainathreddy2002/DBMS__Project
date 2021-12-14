@@ -398,7 +398,7 @@ app.post('/cardpayment', function(req, res) {
                 console.log('Email sent: ' + info.response);
             }
         });
-        res.send(" <h2  style='font-style: italic ; font-family:'Times New Roman', Times, serif; color:blue;' >Payment Successful,Your tickets are booked and sent to your email,please note the PNR number :</h2>" + dbpnr);
+        res.send(" <h2  style='font-style: italic ; font-family:'Times New Roman', Times, serif; color:blue;' >Payment Successful,Your tickets are booked and sent to your email</h2>" );
 
     }
 })
@@ -461,7 +461,7 @@ app.post('/upipayment', function(req, res) {
                 console.log('Email sent: ' + info.response);
             }
         });
-        res.send(" <h2  style='font-style: italic ; font-family:'Times New Roman', Times, serif; color:blue;' >Payment Successful,Your tickets are booked and sent to your email,please note the PNR number :</h2>" + dbpnr);
+        res.send(" <h2  style='font-style: italic ; font-family:'Times New Roman', Times, serif; color:blue;' >Payment Successful,Your tickets are booked and sent to your email.</h2>" );
 
 
     } else {
@@ -525,7 +525,7 @@ app.post('/netbanking', function(req, res) {
         }
     });
     res.setHeader('Content-type', 'text/html')
-    res.send("<h2 style='font-style: italic ; font-family:'Times New Roman', Times, serif;color:red;'>Payment Successful,Your tickets are booked and sent to your email,please note the PNR number :</h2>" + dbpnr);
+    res.send("<h2 style='font-style: italic ; font-family:'Times New Roman', Times, serif;color:red;'>Payment Successful,Your tickets are booked and sent to your email." );
 
 })
 

@@ -54,7 +54,21 @@ CITY DETAILS TABLE:
 -AIRPORT NAME
 
 PAYMENT DETAILS:
-TRANSACTION ID -EMAIL -CARD NUMBER -CARDOWNER NAME -BANKNAME -UPI ID -START CITY -DESTINATION -STARTTIME -REACHTIME -PRICE -PNR -BOOKIN STATUS -PASSENGER NAME 
+-TRANSACTION ID 
+-EMAIL 
+-CARD NUMBER 
+-CARDOWNER NAME 
+-BANKNAME 
+-UPI ID 
+-START CITY 
+-DESTINATION 
+-STARTTIME 
+-REACHTIME 
+-PRICE 
+-PNR 
+-BOOKING STATUS 
+-PASSENGER NAME 
+
 Points to Note while executing:-
 
 1)While selecting the starting and destination city you need to press the down arrow beside the select city button and same for selection of date and number of seats button

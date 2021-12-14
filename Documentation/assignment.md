@@ -22,8 +22,8 @@ The different pages of our UI:-
 DATABASE DETAILS: Mysql Online database
 
 USER TABLE:
-- ID
-- EMAIL ID
+-ID
+-EMAIL ID
 -CUSTOMER PASSWORD
 
 FLIGHTINFO TABLE:
@@ -56,8 +56,6 @@ PAYMENT DETAILS:
 -PNR
 -BOOKING STATUS
 -PASSENGER NAME
-
-
 
 BACK END :
 Node.js

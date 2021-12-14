@@ -29,6 +29,7 @@ Flight Booking Page:-Allows the user to select the starting and the destination 
 Passenger Information Page:-Asks for passengers details in order to print it on the ticket
 
 Select Payment Method Page:-Allows the user to select their desired payment option to pay for the ticket.
+This consists of card payment page,net banking page,upi page
 
 Database Details:-
 

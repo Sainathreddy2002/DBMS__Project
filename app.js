@@ -116,7 +116,7 @@ app.post('/getotp', function(req, res) {
                         from: 'connecting2airways@gmail.com',
                         to: reqemail,
                         subject: 'PASSWORD CHANGE REQUEST',
-                        text: "<h2 style='font-style: italic ; font-family:'Times New Roman', Times, serif;' > The OTP for for changing the password is<h2> " + random_otp_generator
+                        text: " The OTP for for changing the password is " + random_otp_generator
                     };
 
                     transporter.sendMail(mailOptions, function(error, info) {

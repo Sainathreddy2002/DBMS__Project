@@ -2,6 +2,8 @@ Database Management Systems(CS308) PROJECT
 
 Project Name:-Online Airways Reservation System 
 
+Name of the Airways:-Connecting Airways
+
 Idea:-To Design an Online Airways Reservation System which is funtional to the passengers.
 
 Team Members:-Hruday Reddy(19XJ1A0546)
@@ -28,7 +30,7 @@ Create New Account Page:-Allows a non-existing user to create a new account,so t
 
 Flight Booking Page:-Allows the user to select the starting and the destination cities,date of travel,number of seats and flight of their choice.
 
-Passenger Information Page:-Asks for passengers details in order to print it on the ticket
+Passenger Information Page:-Asks for passengers details.
 
 Select Payment Method Page:-Allows the user to select their desired payment option to pay for the ticket.
 This consists of card payment page,net banking page,upi page

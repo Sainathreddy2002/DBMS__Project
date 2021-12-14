@@ -12,11 +12,12 @@ Idea:To design a airways reservation system in order to book tickets which inclu
 FRONTEND:-
 The Front end is done using HTML,CSS,JAVASCRIPT.
 
-The different frames of our UI:-
--Login Frame
--Flight information Frame
--Passenger Details Frame
--Payment Options Frame
+The different pages of our UI:-
+-Login Page
+-Create New Account Page
+-Flight information Page
+-Passenger Details Page
+-Payment Options Page
 
 DATABASE DETAILS: Mysql Online database
 

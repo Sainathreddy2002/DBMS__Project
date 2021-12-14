@@ -50,6 +50,8 @@ Points to Note while executing:-
 
 2)For passenger details and payment details the user needs to fill all the textfields
 
+NODE.js:
+Used node.js to connect databases and frontend and also update,read,add,delete values from the database.
  
 
    

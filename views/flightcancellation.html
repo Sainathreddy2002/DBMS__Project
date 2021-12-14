@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        CANCEL YOUR FLIGHT
+    </title>
+    <style>
+        body {
+            background-image: linear-gradient(to bottom, #dde4f0, #bad0e2, #92bdd0, #67abba, #3a999d);
+        background-attachment: fixed;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .css-input {
+            padding: 3px;
+            font-size: 17px;
+            border-width: 5px;
+            border-color: #CCCCCC;
+            background-color: #FFFFFF;
+            color: #000000;
+            border-style: hidden;
+            border-radius: 15px;
+            box-shadow: -5px -6px 17px rgba(66, 66, 66, .53);
+            text-shadow: 8px 26px 14px rgba(66, 66, 66, .75);
+        }
+        
+        .css-input:focus {
+            outline: none;
+        }
+        /*buttonstyling*/
+        
+        .searchflights {
+            box-shadow: 1px 1px 20px 0px #8a2a21;
+            background: linear-gradient(to bottom, #1a0785 5%, #290652 100%);
+            background-color: #240768;
+            border-radius: 10px;
+            border: 1px solid #240401;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Times New Roman;
+            font-size: 15px;
+            font-style: italic;
+            padding: 8px 25px;
+            text-decoration: none;
+            text-shadow: 0px 1px 42px #05425e;
+        }
+        
+        .searchflights:hover {
+            background: linear-gradient(to bottom, #06bfd8 5%, #053d72 100%);
+            background-color: #5309db;
+        }
+        
+        .searchflights:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+    <script>
+        function getConfirmation() {
+            var retVal = confirm("Do you want to cancel the flight ?");
+            if (retVal == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h2>CANCEL YOUR FLIGHT</h2>
+    <form method="post" action="/flightcancellation" onsubmit=" return getConfirmation();">
+        <label for="pnr">Enter PNR</label>
+        <input type="text" class="css-input" name="pnr" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="7" required>
+        <br><br>
+        <input type="submit" class="searchflights" value="Cancel Flight">
+    </form>
+
+
+</body>
+
+
+</html>

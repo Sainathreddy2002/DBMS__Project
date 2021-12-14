@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ENTER THE PASSENGERS DETAILS</title>
+    <style>
+          body {
+            font-style: italic;
+            font-weight: bolder;
+            font-family: 'Times New Roman', Times, serif;
+            text-align: center;
+            background-image: linear-gradient(to bottom, #e7dbdf, #ffd8d7, #ffd9c1, #ffe1a7, #f0f097);
+            background-attachment: fixed;
+        }
+        /*dropwdownstyling*/
+        
+        .select {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            width: 20%;
+        }
+        
+        .select select {
+            font-family: 'Arial';
+            display: inline-block;
+            width: 80%;
+            cursor: pointer;
+            padding: 10px 15px;
+            outline: 0;
+            border: 2px solid #000000;
+            border-radius: 10px;
+            background: #000001;
+            color: #fbfbfb;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        
+        .select select::-ms-expand {
+            display: none;
+        }
+        
+        .select select:hover,
+        .select select:focus {
+            color: #000000;
+            background: #e2e3e7;
+        }
+        
+        .select select:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .select_arrow {
+            position: absolute;
+            top: 16px;
+            right: 40px;
+            width: 0px;
+            height: 0px;
+            border: solid #7b7b7b;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+        
+        .select select:hover~.select_arrow,
+        .select select:focus~.select_arrow {
+            border-color: #000000;
+        }
+        
+        .select select:disabled~.select_arrow {
+            border-top-color: #cccccc;
+        }
+        /*radiobutton styling*/
+        
+        @keyframes click-wave {
+            0% {
+                height: 40px;
+                width: 40px;
+                opacity: 0.15;
+                position: relative
+            }
+            100% {
+                height: 200px;
+                width: 200px;
+                margin-left: -80px;
+                margin-top: -80px;
+                opacity: 0
+            }
+        }
+        
+        .option-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            position: relative;
+            top: 13.33333px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            transition: all 0.15s ease-out 0s;
+            background: #cbd1d8;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 0.5rem;
+            outline: none;
+            position: relative;
+            z-index: 1000
+        }
+        
+        .option-input:hover {
+            background: #010913
+        }
+        
+        .option-input:checked {
+            background: #25010d
+        }
+        
+        .option-input:checked::before {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            content: "\f111";
+            font-family: "Font Awesome 5 Free";
+            display: inline-block;
+            font-size: 26.66667px;
+            text-align: center;
+            line-height: 40px
+        }
+        
+        .option-input:checked::after {
+            -webkit-animation: click-wave 0.25s;
+            -moz-animation: click-wave 0.25s;
+            animation: click-wave 0.25s;
+            background: #8116e6;
+            content: '';
+            display: block;
+            position: relative;
+            z-index: 100
+        }
+        
+        .option-input.radio {
+            border-radius: 50%
+        }
+        
+        .option-input.radio::after {
+            border-radius: 50%
+        }
+        
+     
+        /*buttonstyling*/
+        
+        .searchflights {
+            box-shadow: 1px 1px 20px 0px #8a2a21;
+            background: linear-gradient(to bottom, #1a0785 5%, #290652 100%);
+            background-color: #240768;
+            border-radius: 10px;
+            border: 1px solid #240401;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Times New Roman;
+            font-size: 15px;
+            font-style: italic;
+            padding: 8px 25px;
+            text-decoration: none;
+            text-shadow: 0px 1px 42px #05425e;
+        }
+        
+        .searchflights:hover {
+            background: linear-gradient(to bottom, #06bfd8 5%, #053d72 100%);
+            background-color: #5309db;
+        }
+        
+        .searchflights:active {
+            position: relative;
+            top: 1px;
+        }
+        
+        .css-input {
+            padding: 3px;
+            font-size: 17px;
+            border-width: 5px;
+            border-color: #CCCCCC;
+            background-color: #FFFFFF;
+            color: #000000;
+            border-style: hidden;
+            border-radius: 15px;
+            box-shadow: -5px -6px 17px rgba(66, 66, 66, .53);
+            text-shadow: 8px 26px 14px rgba(66, 66, 66, .75);
+        }
+        
+        .css-input:focus {
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <h3>Enter the details of passengers</h3>
+            <form id="passinfo" action="/paymentoptions" method="post">
+                <input type="radio" value="economy" name="classsele" class="option-input radio" checked>
+                <label for="economy">Economy Class Price:</label>
+                <label>{{economypricestr}}</label>
+                <br><br>
+                <input type="radio" value="business" name="classsele" class="option-input radio">
+                <label for="business">Business Class Price:</label>
+                <label>{{businesspricestr}}</label>
+                <br><br>
+                <input type="radio" value="first" name="classsele" class="option-input radio">
+                <label for="first">First Class Price:</label>
+                <label>{{firstclasspricestr}}</label>
+
+                <br><br>
+                <h2>Fill the details of passengers </h2>
+                {{#each noofpass }} {{#with this}}
+                <br><br>
+                <div class="select">
+                    <select id="mrms" name="mrms">
+            <option value="mr">Mr</option>
+            <option value="ms">Ms</option>
+            <option value="mrs">Mrs</option>
+        </select>
+                    <div class="select_arrow">
+                    </div>
+                </div>
+                <br><br>
+                <label for="firstname">First Name</label>
+                <input type="text" class="css-input" name="firstname" required minlength="4">
+                <br><br>
+                <label for="lastname">Last Name</label>
+                <input type="text" class="css-input" name="lastname" required>
+                <br><br><br> {{/with}} {{/each}}
+                <br><br>
+                <input type="submit" class="searchflights" value="Payment options">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

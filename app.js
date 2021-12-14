@@ -246,6 +246,8 @@ app.get('/flightdetails', function(req, res) {
                 var date1 = new Date(arr[0], arr[1], arr[2]);
                 var value = date.subtract(date1, todaydate);
                 var absolutevalue = Math.round(value.toDays()) - 30;
+                if(absolutevalue<0){res.send("ENTER A VALID DATE");}
+                else{
                 console.log(absolutevalue);
                 console.log(result.length);
                 //console.log(result[0].price);
@@ -265,7 +267,7 @@ app.get('/flightdetails', function(req, res) {
                         finalprice = result[index].price;
                     }
                 }
-                res.render('login1.html', { result: result, cityname: data })
+                res.render('login1.html', { result: result, cityname: data })}
             });
         }
         pool.releaseConnection(con);

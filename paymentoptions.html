@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SELECT PAYMENT METHOD</title>
+    <style>
+        /*radiobutton styling*/
+        
+        @keyframes click-wave {
+            0% {
+                height: 40px;
+                width: 40px;
+                opacity: 0.15;
+                position: relative
+            }
+            100% {
+                height: 200px;
+                width: 200px;
+                margin-left: -80px;
+                margin-top: -80px;
+                opacity: 0
+            }
+        }
+        
+        .option-input {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+            position: relative;
+            top: 13.33333px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            height: 20px;
+            width: 20px;
+            transition: all 0.15s ease-out 0s;
+            background: #cbd1d8;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            margin-right: 0.5rem;
+            outline: none;
+            position: relative;
+            z-index: 1000
+        }
+        
+        .option-input:hover {
+            background: #010913
+        }
+        
+        .option-input:checked {
+            background: #25010d
+        }
+        
+        .option-input:checked::before {
+            height: 20px;
+            width: 20px;
+            position: absolute;
+            content: "\f111";
+            font-family: "Font Awesome 5 Free";
+            display: inline-block;
+            font-size: 26.66667px;
+            text-align: center;
+            line-height: 40px
+        }
+        
+        .option-input:checked::after {
+            -webkit-animation: click-wave 0.25s;
+            -moz-animation: click-wave 0.25s;
+            animation: click-wave 0.25s;
+            background: #8116e6;
+            content: '';
+            display: block;
+            position: relative;
+            z-index: 100
+        }
+        
+        .option-input.radio {
+            border-radius: 50%
+        }
+        
+        .option-input.radio::after {
+            border-radius: 50%
+        }
+        
+        #inner {
+            font-family: 'Arial';
+            font-style: italic;
+            margin: 0 auto;
+            border: 1px solid white;
+            top: 50%;
+            left: 50%;
+            width: 30%;
+            height: 80%;
+        }
+        
+        #outer {
+            border: 1px solid white;
+            width: 100%;
+            height: 100%
+        }
+        /*buttonstyling*/
+        
+        .searchflights {
+            box-shadow: 1px 1px 20px 0px #8a2a21;
+            background: linear-gradient(to bottom, #1a0785 5%, #290652 100%);
+            background-color: #240768;
+            border-radius: 10px;
+            border: 1px solid #240401;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Times New Roman;
+            font-size: 15px;
+            font-style: italic;
+            padding: 8px 25px;
+            text-decoration: none;
+            text-shadow: 0px 1px 42px #05425e;
+        }
+        
+        .searchflights:hover {
+            background: linear-gradient(to bottom, #06bfd8 5%, #053d72 100%);
+            background-color: #5309db;
+        }
+        
+        .searchflights:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <h2>Select Payment Method</h2>
+            <form action="/payment" method="post">
+                <input type="radio" value="Creditcard" name="payopt" class="option-input radio" checked>
+                <label for="Creditcard">Creditcard/Debitcard </label>
+                <br><br>
+                <input type="radio" value="Upi" name="payopt" class="option-input radio">
+                <label for="Upi">Upi</label>
+                <br><br>
+                <input type="radio" value="Netbanking" name="payopt" class="option-input radio">
+                <label for="Netbanking">Netbanking </label>
+                <br><br>
+                <label>Total Price (including taxes in Rs):</label>
+                <label>{{finalpricel}}</label>
+                <br><br>
+                <input type="submit" class="searchflights" value="Proceed to Payment">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

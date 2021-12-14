@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Pay to book your tickets
+    </title>
+    <style>
+        body {
+            background-image: url("https://image.freepik.com/free-vector/elegant-white-background-with-shiny-lines_1017-17580.jpg");
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+            text-align: center;
+        }
+        
+        .css-input {
+            padding: 3px;
+            font-size: 17px;
+            border-width: 5px;
+            border-color: #CCCCCC;
+            background-color: #FFFFFF;
+            color: #000000;
+            border-style: hidden;
+            border-radius: 15px;
+            box-shadow: -5px -6px 17px rgba(66, 66, 66, .53);
+            text-shadow: 8px 26px 14px rgba(66, 66, 66, .75);
+        }
+        
+        .css-input:focus {
+            outline: none;
+        }
+        /*buttonstyling*/
+        
+        .searchflights {
+            box-shadow: 1px 1px 20px 0px #8a2a21;
+            background: linear-gradient(to bottom, #1a0785 5%, #290652 100%);
+            background-color: #240768;
+            border-radius: 10px;
+            border: 1px solid #240401;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Times New Roman;
+            font-size: 15px;
+            font-style: italic;
+            padding: 8px 25px;
+            text-decoration: none;
+            text-shadow: 0px 1px 42px #05425e;
+        }
+        
+        .searchflights:hover {
+            background: linear-gradient(to bottom, #06bfd8 5%, #053d72 100%);
+            background-color: #5309db;
+        }
+        
+        .searchflights:active {
+            position: relative;
+            top: 1px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>Pay with your Credit/Debit Card</h2>
+    <form method="post" action="/cardpayment">
+        <label for="cardowner">Card Owner</label>
+        <br><br>
+        <input type="text" class="css-input" name="cardowner" required>
+        <br><br>
+        <label for="cardnumber">Card Number</label>
+        <br><br>
+        <input type="number" name="cardnumber" class="css-input" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="16" required>
+        <br><br>
+        <label for="expirationdate">Expiry Date</label>
+        <br><br>
+        <input type="month" name="expirationdate" class="css-input" required>
+        <br><br>
+        <label for="cvv">Cvv</label>
+        <br><br>
+        <input type="number" maxlength="3" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" name="cvv" class="css-input" required>
+        <br><br>
+        <input type="submit" class="searchflights" value="Confirm Payment">
+    </form>
+</body>
+
+</html>

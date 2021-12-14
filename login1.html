@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title style="font-style: italic">WELCOME TO ONLINE AIRWAY RESERVATION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            /*background: dodgerblue linear-gradient(45deg, aqua, dodgerblue, deeppink) fixed;*/
+            background-image: linear-gradient(to right bottom, #fbf6f6, #fff4ee, #fdf5e4, #eff9e1, #d8fdea);
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            font-style: italic;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        #mydesign {
+            font-style: italic;
+            background-color: rgb(17, 68, 161);
+        }
+        
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+        
+        .sidebar a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+        
+        .sidebar a:hover {
+            color: #f1f1f1;
+        }
+        
+        .sidebar .closebtn {
+            position: absolute;
+            top: 0;
+            right: 25px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+        
+        .openbtn {
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #111;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+        }
+        
+        .openbtn:hover {
+            background-color: #444;
+        }
+        
+        #main {
+            transition: margin-left .5s;
+            padding: 16px;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .sidebar {
+                padding-top: 15px;
+            }
+            .sidebar a {
+                font-size: 18px;
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        table,
+        th,
+        td {
+            border: #0f010d;
+            border: 2px solid rgb(4, 0, 8);
+        }
+        
+        table {
+            border-collapse: collapse;
+        }
+        
+        tr:nth-child {
+            background-color: #0edff7;
+            /*color: #290688;*/
+        }
+        
+        td:hover {
+            background-color: #290688;
+            color: rgb(236, 228, 228);
+        }
+        
+        td {
+            text-align: center;
+        }
+        /*table button styling*/
+        
+        .btn {
+            background: #3e2fb5;
+            background-image: -webkit-linear-gradient(top, #3e2fb5, #2980b9);
+            background-image: -moz-linear-gradient(top, #3e2fb5, #2980b9);
+            background-image: -ms-linear-gradient(top, #3e2fb5, #2980b9);
+            background-image: -o-linear-gradient(top, #3e2fb5, #2980b9);
+            background-image: linear-gradient(to bottom, #3e2fb5, #2980b9);
+            -webkit-border-radius: 8;
+            -moz-border-radius: 8;
+            border-radius: 8px;
+            font-family: Arial;
+            font-style: italic;
+            color: #ffffff;
+            font-size: 10px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+        
+        .btn:hover {
+            background: #6b3370;
+            background-image: -webkit-linear-gradient(top, #6b3370, #827487);
+            background-image: -moz-linear-gradient(top, #6b3370, #827487);
+            background-image: -ms-linear-gradient(top, #6b3370, #827487);
+            background-image: -o-linear-gradient(top, #6b3370, #827487);
+            background-image: linear-gradient(to bottom, #6b3370, #827487);
+            text-decoration: none;
+        }
+        /*submit ,searchflights styling*/
+        
+        .searchflights {
+            box-shadow: 1px 1px 20px 0px #8a2a21;
+            background: linear-gradient(to bottom, #1a0785 5%, #290652 100%);
+            background-color: #240768;
+            border-radius: 10px;
+            border: 1px solid #240401;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Times New Roman;
+            font-size: 10px;
+            font-style: italic;
+            padding: 8px 25px;
+            text-decoration: none;
+            text-shadow: 0px 1px 42px #05425e;
+        }
+        
+        .searchflights:hover {
+            background: linear-gradient(to bottom, #06bfd8 5%, #053d72 100%);
+            background-color: #5309db;
+        }
+        
+        .searchflights:active {
+            position: relative;
+            top: 1px;
+        }
+        /*dropdown styling*/
+        
+        .select {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 15px;
+            width: 15%;
+        }
+        
+        .select select {
+            font-family: 'Arial';
+            display: inline-block;
+            width: 80%;
+            cursor: pointer;
+            padding: 10px 15px;
+            outline: 0;
+            border: 2px solid #000000;
+            border-radius: 10px;
+            background: #000001;
+            color: #fbfbfb;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+        }
+        
+        .select select::-ms-expand {
+            display: none;
+        }
+        
+        .select select:hover,
+        .select select:focus {
+            color: #000000;
+            background: #e2e3e7;
+        }
+        
+        .select select:disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .select_arrow {
+            position: absolute;
+            top: 16px;
+            right: 70px;
+            width: 0px;
+            height: 0px;
+            border: solid #7b7b7b;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+        }
+        
+        .select select:hover~.select_arrow,
+        .select select:focus~.select_arrow {
+            border-color: #000000;
+        }
+        
+        .select select:disabled~.select_arrow {
+            border-top-color: #cccccc;
+        }
+        /*passinfo dropdown styling*/
+    </style>
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+        }
+        document.getElementById('today').value = moment().format('YYYY-MM-DD');
+
+        function toggleTable() {
+            document.getElementById("myTable").classList.toggle("hidden");
+        }
+
+        function getConfirmation() {
+            var retVal = confirm("Do you want to delete your account ?");
+            if (retVal == true) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <h1 style="color: rgb(14, 10, 1); font-style: italic;">WELCOME TO CONNECTING AIRWAYS ONLINE RESERVATION</h1>
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="/deleteaccount" onclick=" return getConfirmation()">Delete Account</a>
+        <a href="/f">Change Password</a>
+        <a href="/flightcancellation">Flight Cancellation</a>
+        <a href="/">Log out</a>
+    </div>
+
+    <div id="main">
+        <button class="openbtn" onclick="openNav()" style="font-style: italic ; font-family:'Times New Roman', Times, serif;">☰ Menu</button>
+    </div>
+    <h2>SELECT CITIES</h2>
+    <form id="dropdown" action="/flightdetails" method="get" id="tocities" name="tocities">
+        <label for="to">TO</label>
+        <div class="select">
+            <select id="tocities" name="tocities" value="Select City ">
+            <option value="tocityname" selected="true" disabled>--Select City--</option>
+        {{#each cityname}} {{#with this}}
+        <option value={{cityname}}>{{cityname}}</option>
+        {{/with}} {{/each}}
+        </select>
+            <div class="select_arrow">
+            </div>
+        </div>
+        <label for="from">FROM</label>
+        <div class="select">
+            <select id="fromcities" name="fromcities" value=" Select City ">
+            <option value="fromcityname" selected="true" disabled>--Select City--</option> 
+            {{#each cityname}}
+                {{#with this}}
+              <option value={{cityname}}>{{cityname}}</option> 
+                {{/with}}
+                {{/each}}
+            </select>
+            <div class="select_arrow">
+            </div>
+        </div>
+        <br><br>
+        <label for="no of passengers">SELECT THE NUMBER OF PASSENGERS</label>
+        <div class="noofpass">
+            <select id="noofpass" name="noofpass">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option> 
+    </select>
+        </div>
+        <label for="departure date">DEPARTURE DATE</label>
+        <input type="date" id="today" name="selecteddate" min="2021-11-20" max="2022-11-22" required>
+        <input type="submit" class="searchflights" value="Submit">
+        <button type="button" value="Submit" class="searchflights" onclick="toggleTable();">SEARCH FLIGHTS</button>
+    </form>
+    <script src="login.js"></script>
+    <p id="days"></p>
+    <table id="myTable" class="hidden" name="flightinfo">
+        <tr class="clickable">
+            <th>TO</th>
+            <th>FROM</th>
+            <th>FLIGHT ID</th>
+            <th>TIMETAKEN</th>
+            <th>ECONOMY CLASS PRICE</th>
+            <th>START TIME</th>
+            <th>REACH TIME</th>
+            <th>SELECT YOUR FLIGHT</th>
+        </tr>
+        {{#each result}} {{#with this}}
+        <tr class="clickable">
+            <td>{{startfrom}}</td>
+            <td>{{destination}}</td>
+            <td>{{flightid}}</td>
+            <td>{{timetaken}}</td>
+            <td>{{price}}</td>
+            <form action="/passinfo" method="POST" name="timings" id="flighttimings">
+                <td><input type="text" value={{starttime}} name="starttime" style="background-color:  dodgerblue ;" readonly></td>
+                <td><input type="text" value={{reachtime}} name="reachtime" style="background-color:  dodgerblue ;" readonly></td>
+                <td><input type="submit" name="gettimings" class="btn" value="Select Flight"> </td>
+            </form>
+        </tr>
+        {{/with}} {{/each}}
+    </table>
+</body>
+
+</html>

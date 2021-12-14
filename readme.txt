@@ -20,20 +20,20 @@ Features of the Project:-
 
 -Passengers can select their desired payment option(such as credit card,net banking,upi).
 
--Ticket confirmation is sent to your email. 
+-Ticket confirmation is sent to your email with the PNR number.
 
 Various Pages:-
 
-Login Page:-Allows the user to login(if he already has a account in the website)
+Login Page:-Allows the user to login(if he already has an account in the website)
 
-Create New Account Page:-Allows a non-existing user to create a new account,so that he can login directly from the next time
+Create New Account Page:-Allows a non-existing user to create a new account,so that he can login directly from the next time.
 
 Flight Booking Page:-Allows the user to select the starting and the destination cities,date of travel,number of seats and flight of their choice.
 
 Passenger Information Page:-Asks for passengers details.
 
 Select Payment Method Page:-Allows the user to select their desired payment option to pay for the ticket.
-This consists of card payment page,net banking page,upi page
+This consists of card payment page,net banking page,upi page.
 
 Database Details:-
 

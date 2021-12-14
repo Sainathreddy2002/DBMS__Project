@@ -16,7 +16,7 @@ Features of the Project:-
 
 -Passengers can select their desired starting and destination cities,number of seats,date of travel and flight of their choice(in the available flights)
 -Passengers can select their desired payment option(such as credit card,net banking,upi).
--Payment confirmation is sent to your email. 
+-Ticket confirmation is sent to your email. 
 
 Various Pages:-
 

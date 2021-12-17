@@ -234,7 +234,8 @@ app.get('/flightdetails', function(req, res) {
         noofpass = req.query.noofpass;
         console.log(to);
         console.log(from);
-        if (to == from) { alert("PLEASE SELECT DIFFERENT CITY"); } else {
+        if (to == from) { alert("PLEASE SELECT DIFFERENT CITY");
+                         res.send('PLEASE SELECT A DIFFERENT CITY');} else {
             var sql1 = `SELECT *FROM flightinfo WHERE startfrom='${to}' AND destination='${from}';`
             con.query(sql1, function(err, result, field) {
                 if (err) throw err;
@@ -253,7 +254,11 @@ app.get('/flightdetails', function(req, res) {
                 //console.log(result[0].price);
                 for (let index = 0; index < result.length; index++) {
                     result[index].flightid = "CAIR" + result[index].flightid;
-                    if (absolutevalue < 5) {
+                     if(absolutevalue<0)
+                    {
+                       res.send("PLEASE SELECT A CORRECT DATE");
+                    }
+                    else if (absolutevalue < 5) {
                         result[index].price = Math.round((result[index].price) * 2.5);
                         finalprice = result[index].price;
                     } else if (5 <= absolutevalue < 15) {

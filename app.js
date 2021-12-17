@@ -7,10 +7,10 @@ var mysql = require('mysql2');
 var html = require("html");
 var flash = require('req-flash');
 const pool = mysql.createPool({
-    host: "sql6.freesqldatabase.com",
-    user: "sql6457999",
-    password: "zKXNNSgtcm",
-    database: 'sql6457999',
+    host: "sql5.freesqldatabase.com",
+    user: "sql5459626",
+    password: "z5eZQnTI7k",
+    database: ' sql5459626',
     waitForConnections: true,
     connectionLimit: 10,
     queueLimit: 0

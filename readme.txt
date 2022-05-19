@@ -6,10 +6,6 @@ Name of the Airways:-Connecting Airways(Connects People)
 
 Idea:-To Design an Online Airways Reservation System which is funtional to the passengers.
 
-Team Members:-Hruday Reddy(19XJ1A0546)
-              Sainath Reddy(19XJ1A0547)
-              Pranav Reddy(19XJ1A0553)
-
 Front End:HTML,CSS
 Back End:Node.js
 Database:MySQL
@@ -82,5 +78,6 @@ Points to Note while executing:-
 NODE.js:
 Used node.js to connect databases and frontend and also update,read,add,delete values from the database.
  
+Developed by Sainath
 
    

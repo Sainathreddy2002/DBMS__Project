@@ -2,8 +2,7 @@ DBMS PROJECT
 
 Project Title:-Online Airways Reservation System
 
-Team Members:
-Sainath Reddy-19XJ1A0547
+
 
 
 Idea:To design a airways reservation system in order to book tickets which includes passenger details and payment options.
@@ -58,3 +57,6 @@ PAYMENT DETAILS:
 
 BACK END :
 Node.js
+
+
+By:Sainath Reddy

@@ -3,9 +3,8 @@ DBMS PROJECT
 Project Title:-Online Airways Reservation System
 
 Team Members:
-Nimma Sai Hruday Reddy-19XJ1A0546
 Sainath Reddy-19XJ1A0547
-Pranav Kumar Reddy Teepireddy-19XJ1A0553
+
 
 Idea:To design a airways reservation system in order to book tickets which includes passenger details and payment options.
 

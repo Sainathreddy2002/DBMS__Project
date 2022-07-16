@@ -108,7 +108,7 @@ app.post('/getotp', function(req, res) {
                         service: 'gmail',
                         auth: {
                             user: 'connecting2airways@gmail.com',
-                            pass: 'Sainath@2'
+                            pass: 'baovrikwcdvrcjkb'
                         }
                     });
                     reqemail = req.body.email;
@@ -386,7 +386,7 @@ app.post('/cardpayment', function(req, res) {
             service: 'gmail',
             auth: {
                 user: 'connecting2airways@gmail.com',
-                pass: 'Sainath@2'
+                pass: 'baovrikwcdvrcjkb'
             }
         });
         var mailOptions = {
@@ -449,7 +449,7 @@ app.post('/upipayment', function(req, res) {
             service: 'gmail',
             auth: {
                 user: 'connecting2airways@gmail.com',
-                pass: 'Sainath@2'
+                pass: 'baovrikwcdvrcjkb'
             }
         });
         var mailOptions = {
@@ -512,7 +512,7 @@ app.post('/netbanking', function(req, res) {
         service: 'gmail',
         auth: {
             user: 'connecting2airways@gmail.com',
-            pass: 'Sainath@2'
+            pass: 'baovrikwcdvrcjkb'
         }
     });
     var mailOptions = {
@@ -550,7 +550,7 @@ app.post('/flightcancellation', function(req, res) {
                         service: 'gmail',
                         auth: {
                             user: 'connecting2airways@gmail.com',
-                            pass: 'Sainath@2'
+                            pass: 'baovrikwcdvrcjkb'
                         }
                     });
                     var mailOptions = {
